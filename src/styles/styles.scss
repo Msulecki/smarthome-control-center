@@ -1,0 +1,25 @@
+@import './fonts.scss';
+@import './variables.scss';
+@import './colors.scss';
+@import './console';
+@import './mixins.scss';
+
+@import '../index.scss';
+
+@import '../components/LoadingScreen/LoadingScreen.scss';
+
+@import '../components/App.scss';
+
+@import '../components/Header/Header.scss';
+
+@import '../components/Devices/Devices.scss';
+@import '../components/Terminals/Terminals.scss';
+
+@import '../components/Card/Card.scss';
+@import '../components/PowerSetter/PowerSetter.scss';
+@import '../components/PowerIndicator/PowerIndicator.scss';
+@import '../components/Badge/Badge.scss';
+
+@import '../components/Terminal/Terminal.scss';
+
+@import '../components/Footer/Footer.scss';

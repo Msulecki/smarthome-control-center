@@ -1,0 +1,26 @@
+$font-white: hsl(0, 0, 96);
+$font-dimmed: hsl(0, 0, 76);
+
+$background: hsl(200, 50, 10);
+$background-mono: hsl(0, 0, 10);
+$background-splash: hsl(200, 10, 10);
+
+$active: hsl(100, 60, 60);
+$inactive: hsl(0, 80, 60);
+
+$main-blue: hsl(200, 80, 75);
+$main-magenta: hsl(290, 80, 80);
+
+$card-gradient: hsl(315, 50, 55) 0%, hsl(290, 60, 60) 35%, hsl(200, 60, 65) 65%, hsl(200, 60, 45) 100%;
+
+$card-border: linear-gradient(20deg, $card-gradient);
+$card-background: linear-gradient(30deg, hsl(230, 20, 10) 30%, hsl(200, 30, 15) 100%);
+
+$device-on: hsl(50, 80, 60);
+$device-off: hsl(0, 0, 20);
+
+$relative-on: hsl(0, 0, 90);
+$relative-off: hsl(0, 0, 50);
+$relative-bar: hsl(30, 100, 40);
+
+$separator: hsl(0, 0, 60);
