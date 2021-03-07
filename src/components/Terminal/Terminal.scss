@@ -1,0 +1,25 @@
+.terminal {
+  font-family: 'Courier', monospace;
+  font-size: 1rem;
+  background-color: hsl(0, 0, 10);
+  padding: 0.25rem 0.5rem;
+  overflow: auto;
+
+  &__input {
+    color: $font-white;
+    width: 100%;
+    font-family: inherit;
+
+    &::placeholder {
+      color: $font-dimmed;
+    }
+
+    &:active,
+    &:focus {
+      border: 0;
+      outline: 0;
+    }
+  }
+
+  @include scrollbar;
+}

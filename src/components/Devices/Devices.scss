@@ -1,0 +1,14 @@
+.devices {
+  border-top: 1px solid $separator;
+  border-bottom: 1px solid $separator;
+  flex: 1;
+  padding: 4%;
+  display: grid;
+  align-content: center;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($card-min-width, auto));
+    gap: 1rem;
+  }
+}

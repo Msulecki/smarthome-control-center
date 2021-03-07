@@ -1,0 +1,20 @@
+.power {
+  position: relative;
+  width: 2.8rem;
+  height: 2.8rem;
+  transition-duration: $transition-time;
+  padding: 0.2rem;
+
+  &:not(:last-child) {
+    margin-right: 0.5rem;
+  }
+
+  &__image {
+    width: 100%;
+    height: auto;
+  }
+
+  &--active {
+    cursor: pointer;
+  }
+}

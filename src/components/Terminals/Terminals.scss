@@ -1,0 +1,19 @@
+.terminals {
+  min-height: 18rem;
+  max-height: 18rem;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  gap: 1px;
+  color: $font-white;
+  background-color: $separator;
+}
+
+@media screen and (max-width: 1200px) {
+  .terminals {
+    min-height: 30rem;
+    max-height: 30rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, calc(50% - 0.5px));
+  }
+}

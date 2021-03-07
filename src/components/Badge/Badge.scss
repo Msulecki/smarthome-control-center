@@ -1,0 +1,39 @@
+.badge {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  opacity: 1;
+  font-size: 0.6rem;
+  color: $font-dimmed;
+  transition-duration: $transition-time;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &--active {
+    color: $font-white;
+  }
+
+  &--hidden {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+
+  &--relative {
+    background-color: $relative-bar;
+
+    &.badge--active {
+      transition-duration: 0ms;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

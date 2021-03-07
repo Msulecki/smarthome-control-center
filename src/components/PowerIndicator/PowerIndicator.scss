@@ -1,0 +1,63 @@
+$border-width: 2px;
+$border-radius: 30px;
+
+.power-indicator {
+  position: relative;
+  width: 6rem;
+  height: 16rem;
+  background: $card-border;
+  color: hsl(0, 0, 96);
+  font-size: 2rem;
+  border-radius: $border-radius;
+
+  &__content {
+    position: absolute;
+    top: $border-width;
+    bottom: $border-width;
+    left: $border-width;
+    right: $border-width;
+    background-color: $background;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: $border-radius;
+    overflow: hidden;
+  }
+
+  &__wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: hsla(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+
+  &__bar {
+    background-color: $device-on;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    filter: brightness(0.8);
+  }
+
+  &__color {
+    background-color: $relative-bar;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  &__power {
+    z-index: 2;
+  }
+}
