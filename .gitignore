@@ -2,8 +2,16 @@
 
 # dependencies
 /node_modules
+/server/node_modules
+/server/KEYS
 /.pnp
 .pnp.js
+
+# envs
+.env
+
+# VSCode settings
+.vscode
 
 # testing
 /coverage
