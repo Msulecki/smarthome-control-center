@@ -1,0 +1,32 @@
+{
+  "livingRoom": {
+    "lightSwitch": 14,
+    "lightPower": 2,
+    "lightTemperature": 2,
+    "temperature": 20
+  },
+  "kitchen": {
+    "lightSwitch": 15,
+    "lightPower": null,
+    "lightTemperature": null,
+    "temperature": 20
+  },
+  "bedroom": {
+    "lightSwitch": 16,
+    "lightPower": 3,
+    "lightTemperature": null,
+    "temperature": 13
+  },
+  "snake": {
+    "lightSwitch": 9,
+    "lightPower": null,
+    "lightTemperature": null,
+    "temperature": 17
+  },
+  "yeelight": {
+    "lightSwitch": 1,
+    "lightPower": 1,
+    "lightTemperature": 1,
+    "temperature": null
+  }
+}
