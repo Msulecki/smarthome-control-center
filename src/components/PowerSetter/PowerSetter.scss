@@ -4,6 +4,8 @@
   height: 2.8rem;
   transition-duration: $transition-time;
   padding: 0.2rem;
+  user-select: none;
+  -webkit-touch-callout: none;
 
   &:not(:last-child) {
     margin-right: 0.5rem;
