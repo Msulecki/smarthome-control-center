@@ -1,9 +1,10 @@
 interface ILoadingScreen {
   text?: string;
+  pending?: boolean;
 }
 
 const LoadingScreen = (props: ILoadingScreen) => {
-  const { text = 'Loading' } = props;
+  const { text = 'Loading', pending = false } = props;
 
   return (
     <div className='loading-screen__wrapper'>
@@ -19,9 +20,13 @@ const LoadingScreen = (props: ILoadingScreen) => {
       </div>
       <div className='loading-screen__info'>
         <div className='loading-screen__info--text'>{text}</div>
-        <span className='loading-screen__info--dot'>.</span>
-        <span className='loading-screen__info--dot'>.</span>
-        <span className='loading-screen__info--dot'>.</span>
+        {pending && (
+          <>
+            <span className='loading-screen__info--dot'>.</span>
+            <span className='loading-screen__info--dot'>.</span>
+            <span className='loading-screen__info--dot'>.</span>
+          </>
+        )}
       </div>
     </div>
   );
