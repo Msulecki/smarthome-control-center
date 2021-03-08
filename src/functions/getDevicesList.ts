@@ -5,8 +5,13 @@ const getDevicesList = () => {
   emitter('devices:list:get');
 
   return new Promise((resolve, reject) => {
-    listener('devices:list').then((data) => resolve(data));
-    listener('devices:list:error').then((data) => reject(data));
+    listener('devices:list')
+      .then((data) => resolve(data))
+      .catch((error) => reject(`Error getting device list: ${error}`));
+
+    listener('devices:list:error')
+      .then((data) => reject(data))
+      .catch((error) => reject(`Error getting device list: ${error}`));
   });
 };
 
