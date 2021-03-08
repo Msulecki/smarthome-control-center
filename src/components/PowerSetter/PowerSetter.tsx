@@ -35,11 +35,14 @@ const PowerSetter = (props: IPowerSetter) => {
   const [initialPower, setInitialPower] = useState<number>(defaultPower);
   const [power, setPower] = useState<number>(defaultPower);
 
-  const handlePress = () => {
-    if (!isAdjustable) {
-      return setIsActive(!isActive);
-    }
+  const toggleSwitch = (e: React.MouseEvent | React.TouchEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
 
+    setIsActive(!isActive);
+  };
+
+  const handlePress = () => {
     document.body.classList.add('locked');
 
     !isPressed && setIsPressed(true);
@@ -84,8 +87,6 @@ const PowerSetter = (props: IPowerSetter) => {
       const calculatedPower = yOffset > range[1] ? range[1] : yOffset < range[0] ? range[0] : yOffset;
 
       power !== calculatedPower && initialYPosition && setPower(calculatedPower);
-
-      //  console.log(initialYPosition, yOffset, calculatedPower);
     },
     [isPressed, initialYPosition, power, initialPower, range, STEP_RESOLUTION]
   );
@@ -112,7 +113,11 @@ const PowerSetter = (props: IPowerSetter) => {
 
   return (
     <>
-      <button onMouseDown={handlePress} onTouchStart={handlePress} className={powerClassName}>
+      <button
+        className={powerClassName}
+        onMouseDown={isAdjustable ? handlePress : toggleSwitch}
+        {...(isAdjustable && { onTouchStart: handlePress })}
+      >
         <img className='power__image' src={icon[isActive ? 'active' : 'inactive']} alt={`Toggle ${type}`} />
         {!isPowerBinary && <Badge isActive={isPressed} value={power} type={type} range={range} />}
       </button>
