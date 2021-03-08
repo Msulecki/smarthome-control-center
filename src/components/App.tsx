@@ -5,6 +5,7 @@ import Devices from './Devices';
 import Terminals from './Terminals';
 import Footer from './Footer';
 import getDevicesList from '../functions/getDevicesList';
+import checkForConnectionError from '../socketConnection/checkForConnectionError';
 import { IDeviceProperties, IApiData } from '../interfaces';
 
 const App = () => {
@@ -15,6 +16,15 @@ const App = () => {
 
   useEffect(() => {
     if (!deviceData) {
+      checkForConnectionError()
+        .catch((error) => {
+          console.log(error);
+          setErrorData(error);
+        })
+        .finally(() => {
+          setIsFetchingComplete(true);
+        });
+
       getDevicesList()
         .then((response: any) => {
           if (response.status !== 'OK') {
@@ -26,7 +36,9 @@ const App = () => {
           setSystemData(systemDataResponse);
           setDeviceData(response.result);
         })
-        .catch((error) => setErrorData(error))
+        .catch((error) => {
+          setErrorData(error);
+        })
         .finally(() => {
           setIsFetchingComplete(true);
         });
@@ -38,11 +50,11 @@ const App = () => {
   }, [deviceData, systemData]);
 
   if (!isFetchingComplete) {
-    return <LoadingScreen text='Connecting' />;
+    return <LoadingScreen text='Connecting' pending />;
   }
 
   if (errorData) {
-    return <LoadingScreen text={`Error: ${JSON.stringify(errorData)}`} />;
+    return <LoadingScreen text={errorData.type} />;
   }
 
   return (
